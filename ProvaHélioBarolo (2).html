@@ -129,21 +129,14 @@
             React.useEffect(() => {
                 let imc, faixa
 
-                imc = peso / (altura * altura)
+                imc = (peso / (altura * altura))
 
-                if (imc <= 17) {
-                    faixa = ("Peso Baixo")
-                } else if (imc >= 18.5 && imc <= 24.9) {
-                    faixa = ("Peso Normal")
-                } else if (imc >= 25 && imc <= 29.9) {
-                    faixa = ("Sobrepeso")
-                } else if (imc >= 30 && imc <= 34.9) {
-                    faixa = ("Obesidade (Grau I)")
-                } else if (imc >= 35 && imc <= 39.9) {
-                    faixa = ("Obesidade Severa (Grau II)")
-                } else   {
-                    faixa = ("Obesidade Mórbida (Grau III)")
-                }
+               if(imc <= 18.5) faixa = "Peso Baixo"
+               else if(imc >= 18.5 && imc <= 24.99) faixa = "Peso Normal"
+               else if(imc >= 25 && imc <= 29.99) faixa = "SobrePeso"
+               else if(imc >= 30 && imc <= 34.99) faixa = "Obesidade (Grau I)"
+               else if(imc >= 35 && imc <= 39.99) faixa = "Obesidade Severa (Grau II)"
+               else if(imc >= 40) faixa = "Obesidade Mórbida (Grau III)"
 
                 setImc(imc)
                 setFaixa(faixa)
